@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Votre Nom - Portfolio</title>
+        <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS externe -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 href="#"><span class="circle1"></span>Merissaint John Winneby</h1>
+            <nav>
+                <a href="t.html">Accueil</a>
+                <a href="#" onclick="showContact()">Bio</a> <!-- Lien pour afficher le contenu du contact -->  
+                <a href="#" onclick="showCV()">CV</a> <!-- Lien pour afficher le CV -->
+                <a href="#" onclick="showPortfolio()">Portfolio</a>
+                <a href="#" onclick="showServices()">Services</a>
+            </nav>
+        </div>
+    </header>
+<div id="action">
+    <section id="content">
+        <div class="container">
+            <div class="left-column">
+                <div class="welcome">
+                    <h1 id="salutation">Bonjour!</h1>
+                </div>
+                <div class="shapes-container">
+                        
+                        <div class="shape circle"></div>
+                        <div class="shape triangle"></div>
+                        <div class="shape square"></div>
+                        
+                    </div>
+                    <div class="message">
+                    <h2>Bienvenue sur mon site!</h2></div>
+                <div class="contact-info fadeInUp">
+                   
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/votre-nom/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/votre_nom" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <!-- Ajoutez d'autres icônes de réseaux sociaux si nécessaire -->
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="container">
+                    <div class="portfolio-items">
+                        <a href="#" onclick="showPortfolio()">
+                            <img src="img\im.png" alt="Lien vers le portfolio" style="width: 100%;">
+                            <p style="text-align: center;">Voir mes projets</p>
+                       
+                        </a>
+                    </div>
+                </div>
+        </div>
+
+     
+    </section>
+    <footer>
+        <div class="container" id="footer">
+                <div class="left-column">
+                    <h2>Contact</h2>
+                    <p>Email: altmore07@gmail.com</p>
+                    <p>Téléphone: +509xxxxxxx</p>
+                   
+                </div>
+                <div class="right-column-f">
+                    <p>&copy; 2024 John Winneby Merissaint - Tous droits réservés.</p>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+             function showCV() {
+            // Effacer le contenu actuel de la page
+            document.getElementById("content").innerHTML = "";
+            // Créer la structure HTML du CV
+            var cvContent = `
+                <div class="cv-content">
+                    <h2>Vous pouvez télécharger le CV en cliquant sur le lien ci-dessous :</h2>
+                    <a href="lien_vers_votre_cv.pdf" class="download-cv-btn" target="_blank">Télécharger le CV</a>
+                </div>
+              
+            
+        </div>
+    </footer>
+               
+            `;
+    
+
+            // Ajouter le contenu du CV à la page
+            document.getElementById("content").innerHTML = cvContent;
+        }
+
+        function showPortfolio() {
+            // Effacer le contenu actuel de la page
+            document.getElementById("content").innerHTML = "";
+
+            // Réinsérer le contenu du portfolio
+            var portfolioContent = `
+                <div class="container">
+                    <div class="left-column">
+                        <div class="intro-text fadeInUp">
+                            <p id="changing-text">Développeur</p>
+                        </div>
+                        <div class="contact-info fadeInUp">
+                            <h2>Contact</h2>
+                            <p>Email: altmore07@gmail.com</p>
+                            <p>Téléphone: +509xxxxxxxx</p>
+                               <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/votre-nom/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://twitter.com/votre_nom" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <!-- Ajoutez d'autres icônes de réseaux sociaux si nécessaire -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="portfolio-items">
+                            <div class="portfolio-item">
+                                <img src="https://via.placeholder.com/150" alt="Projet 1">
+                                <h3>Projet 1</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="https://via.placeholder.com/150" alt="Projet 2">
+                                <h3>Projet 2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="https://via.placeholder.com/150" alt="Projet 3">
+                                <h3>Projet 3</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+
+            // Ajouter le contenu du portfolio à la page
+            document.getElementById("content").innerHTML = portfolioContent;
+
+            // Appeler la fonction pour changer le texte toutes les 5 secondes
+            changeTextPeriodically();
+        }
+
+        // Fonction pour changer le texte toutes les 2 secondes
+        function changeTextPeriodically() {
+            var texts = ["PHP-Laravel", "Intégration API", "Application mobile"]; // Liste des textes à afficher
+            var currentIndex = 0; // Index du texte actuel
+
+            // Fonction pour changer le texte
+            function changeText() {
+                document.getElementById("changing-text").innerText = texts[currentIndex]; // Changer le texte
+                currentIndex = (currentIndex + 1) % texts.length; // Passer au texte suivant
+            }
+
+            // Appeler la fonction pour changer le texte toutes les 5 secondes
+            setInterval(changeText, 2000); // 5000 millisecondes = 5 secondes
+       
+        }
+        function showContact() {
+            // Effacer le contenu actuel de la page
+            document.getElementById("content").innerHTML = "";
+
+            // Créer la structure HTML du contact
+            var contactContent = `
+            <div class="contact-info fadeInUp">
+                    <h2>Bio</h2>
+                    <h4>Je suis John Winneby Merissaint. On me surnomme FullStack parce que je suis passionné d'informatique, et en particulier de développement Web. Je suis un jeune professionnel en devenir dont l'engagement pour la satisfaction de ses clients garantit la réussite de leurs projets. Je suis aussi passionné par les jeux d'échecs et par le Ping-Pong. Mon plat préféré est fait de riz blanc traditionnel accompagné de feuilles d'un légume appelé "lalo".</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/votre-nom/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/votre_nom" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <!-- Ajoutez d'autres icônes de réseaux sociaux si nécessaire -->
+                    </div>
+            `;
+
+            // Ajouter le contenu du contact à la page
+            document.getElementById("content").innerHTML = contactContent;
+        }
+         function showServices() {
+            // Effacer le contenu actuel de la page
+            document.getElementById("content").innerHTML = "";
+
+            // Créer la structure HTML des services offerts
+            var servicesContent = `
+                <div class="container">
+                    <div class="left-colum">
+                    <h2>Services Offerts</h2>
+                    <ul>
+                        <li>Service 1</li>
+                        <li>Service 2</li>
+                        <li>Service 3</li>
+                        <!-- Ajoutez d'autres services -->
+                    </ul>
+                </div>
+                </div>
+            `;
+
+            // Ajouter le contenu des services offerts à la page
+            document.getElementById("content").innerHTML = servicesContent;
+        }
+       // Fonction pour générer une liste de couleurs aléatoires avec chaque couleur étant différente des autres
+       function generateRandomColors() {
+        var colors = ["#ff9933", "#299438", "#4073ff"];
+            var randomColors = [];
+
+            // Mélanger la liste des couleurs
+            colors.sort(() => Math.random() - 0.5);
+
+            // Créer une liste de couleurs aléatoires
+            for (var i = 0; i < 3; i++) {
+                randomColors.push(colors[i]);
+            }
+
+            return randomColors;
+        }
+
+        // Fonction pour changer la couleur des formes
+        function changeColors() {
+            var shapes = document.querySelectorAll('.shape');
+            var randomColors = generateRandomColors();
+
+            shapes.forEach(function(shape, index) {
+                shape.style.backgroundColor = randomColors[index]; // Appliquer la couleur à la forme
+            });
+        }
+
+        // Appeler la fonction pour changer les couleurs à intervalles réguliers (toutes les 3 secondes ici)
+        setInterval(changeColors, 1000);
+    </script>
+</body>
+</html>
