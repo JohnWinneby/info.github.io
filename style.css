@@ -169,7 +169,7 @@ footer {
     color: #000000;
     padding-top:  1px;
     padding-bottom: 0%;
-    position:fixed;
+    position:none;
     bottom: 0;
     width: 100%;
 }
